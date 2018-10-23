@@ -31,7 +31,7 @@
 //     return reverse;
 // }
 // solution 4 - Reduce helper
-function reverse(str) {// reduce takes 2 values, First is a function, second is a starting initial value for the function
-    return str.split('').reduce((reverse, letter) => letter + reverse, '' );      // the initial value '' gets passed into the first argument of the anonymous function as 'revers, '');                               
-}
-module.exports = reverse;
+// function reverse(str) {// reduce takes 2 values, First is a function, second is a starting initial value for the function
+//     return str.split('').reduce((reverse, letter) => letter + reverse, '' );      // the initial value '' gets passed into the first argument of the anonymous function as 'revers, '');                               
+// }
+// module.exports = reverse;

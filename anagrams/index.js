@@ -13,24 +13,27 @@
 // }
 // SOLUTION 2
 function anagrams(stringA, stringB) {
-    let obj1 = {};
-    let obj2 = {};
+    const obj1 = makeObject(stringA);
+    const obj2 = makeObject(stringB);
 
-    makeObject(stringA.toLowerCase(), obj1);
-    makeObject(stringB.toLowerCase(), obj2);
-
-    for (let character in obj1) {
-        if (obj1[character] !== obj2[character] || stringA.length !== stringB.length) {
-            return false;
-        } else {
-            return true;
+    if (Object.keys(obj1).length !== Object.keys(obj2).length){
+        return false;
+    } else {
+        for (let character in obj1) {
+            if (obj1[character] !== obj2[character]) {
+                return false;
+            } else {
+                return true;
+            }
         }
     }
 
-    function makeObject(string, obj) {
-        for (let character of string.replace(/[^\w]/g, '')) {
+    function makeObject(string) {
+        const obj = {};
+        for (let character of string.replace(/[^\w]/g, '').toLowerCase()) {
             obj[character] ? obj[character]++ : obj[character] = 1;
         }
+        return obj;
     }
 
 }
